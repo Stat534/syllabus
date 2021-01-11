@@ -1,2 +1,1 @@
-# syllabus
-Course Syllabus
+Course Syllabus for STAT 534
