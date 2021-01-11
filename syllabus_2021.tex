@@ -1,0 +1,370 @@
+\documentclass[11pt,]{article}
+\usepackage[margin=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}} 
+\usepackage{longtable,booktabs}
+
+\usepackage{parskip}
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+\titleformat*{\subsubsection}{\normalsize\itshape}
+
+\usepackage{titling}
+\setlength{\droptitle}{-.25cm}
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines 
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.0pt} 
+\lhead{}
+\chead{}
+\rhead{\footnotesize STAT 534: Spatial Statistics -- Spring 2021}
+\lfoot{}
+\cfoot{\small \thepage/\pageref*{LastPage}}
+\rfoot{}
+
+\fancypagestyle{firststyle}
+{
+\renewcommand{\headrulewidth}{0pt}%
+   \fancyhf{}
+   \fancyfoot[C]{\small \thepage/\pageref*{LastPage}}
+}
+
+%\def\labelitemi{--}
+%\usepackage{enumitem}
+%\setitemize[0]{leftmargin=25pt}
+%\setenumerate[0]{leftmargin=25pt}
+
+
+
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+}
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={ ()},
+             pdfkeywords = {},  
+            pdftitle={STAT 534: Spatial Statistics},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+
+\setcounter{secnumdepth}{0}
+
+
+
+
+
+\usepackage{setspace}
+
+\title{STAT 534: Spatial Statistics}
+\author{Andrew Hoegh}
+\date{Spring 2021}
+
+
+\begin{document}  
+
+		\maketitle
+		
+	
+		\thispagestyle{firststyle}
+
+%	\thispagestyle{empty}
+
+
+	\noindent \begin{tabular*}{\textwidth}{ @{\extracolsep{\fill}} lr @{\extracolsep{\fill}}}
+
+
+E-mail: \texttt{\href{mailto:andrew.hoegh@montana.edu}{\nolinkurl{andrew.hoegh@montana.edu}}} & Web: \href{http://stat534.github.io}{\tt stat534.github.io}\\
+Office Hours: TBD  &  Class Hours: MWF 12:00-12:50\\
+Office: Wilson Hall 2-241  & Class Room: \emph{Wilson Hall 1-144}\\
+	&  \\
+	\hline
+	\end{tabular*}
+	
+\vspace{2mm}
+	
+
+
+\hypertarget{course-description}{%
+\section{Course Description}\label{course-description}}
+
+Statistical methods of spatial data analysis, stationary and
+nonstationary random fields, covariance structures, geostatistical
+models and analysis, spatial point process models and analysis, spatial
+lattice models and analysis. An emphasis will be placed on:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Creating maps and other data visualization products with spatial data,
+\item
+  Identifying differences between the three common spatial data types:
+  point process, geostatistical, and areal data,
+\item
+  Using statistical software and either Bayesian or classical
+  statistical techniques to analyze spatial point process,
+  geostatistical, and areal data structures, and
+\item
+  Implementing version control tools, such as git and github, on spatial
+  data analyses.
+\end{enumerate}
+
+\hypertarget{learning-outcomes}{%
+\section{Learning Outcomes:}\label{learning-outcomes}}
+
+At the end of the course students will understand
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  point process theory and applications including homogeneous and
+  non-homogeneous Poisson point processes
+\item
+  geostatistics including semivariogram estimation and kriging
+\item
+  spatial autoregression including covariance estimation, spatial
+  logistic and Poisson models, simultaneous autoregressive models,
+  conditional autoregressive models.
+\end{enumerate}
+
+\hypertarget{prerequisites}{%
+\section{Prerequisites}\label{prerequisites}}
+
+\begin{itemize}
+\tightlist
+\item
+  Required: STAT 412, STAT 512, and STAT 422
+\item
+  Preferred: STAT 506, extensive experience with R, and an understanding
+  or interest in Bayesian statistics
+\end{itemize}
+
+\hypertarget{textbooks}{%
+\section{Textbooks}\label{textbooks}}
+
+\begin{itemize}
+\tightlist
+\item
+  Hierarchical Modeling and Analysis for Spatial Data, Second Edition,
+  by Bannerjee, Carlin, and Gelfand. While the second edition is
+  preferred, the first edition will suffice.
+\item
+  Animal Movement: Statistical Models for Telemetry Data, by Hooten,
+  Johnson, McClintock, and Morales. \emph{Optional}
+\end{itemize}
+
+\hypertarget{additional-resources}{%
+\section{Additional Resources}\label{additional-resources}}
+
+Analysis, data visualization, and version control procedures will be
+implemented with:
+
+\begin{itemize}
+\tightlist
+\item
+  R / R Studio
+\item
+  Git / Github
+\end{itemize}
+
+\hypertarget{course-policies}{%
+\section{Course Policies}\label{course-policies}}
+
+\hypertarget{grading-policy}{%
+\subsubsection{Grading Policy}\label{grading-policy}}
+
+\begin{itemize}
+\item
+  \textbf{50\%} of your grade will be determined by homework
+  assignments. Collaboration is encouraged on homework assignments, but
+  everyone should complete their own assignments.
+\item
+  \textbf{25\%} of your grade will be determined by a midterm project.
+\item
+  \textbf{25\%} of your grade will be determined by a final project.
+\end{itemize}
+
+\hypertarget{collaboration}{%
+\subsubsection{Collaboration}\label{collaboration}}
+
+University policy states that, unless otherwise specified, students may
+not collaborate on graded material. Any exceptions to this policy will
+be stated explicitly for individual assignments. If you have any
+questions about the limits of collaboration, you are expected to ask for
+clarification.
+
+In this class students are encouraged to collaborate on homework
+assignments, but exams and projects should be completed without
+collaboration.
+
+\hypertarget{academic-misconduct}{%
+\subsubsection{Academic Misconduct}\label{academic-misconduct}}
+
+Section 420 of the Student Conduct Code describes academic misconduct as
+including but not limited to plagiarism, cheating, multiple submissions,
+or facilitating others' misconduct. Possible sanctions for academic
+misconduct range from an oral reprimand to expulsion from the
+university.
+
+\hypertarget{disabilities-policy}{%
+\subsubsection{Disabilities Policy}\label{disabilities-policy}}
+
+Federal law mandates the provision of services at the university-level
+to qualified students with disabilities. If you have a documented
+disability for which you are or may be requesting an accommodation(s),
+you are encouraged to contact the Office of Disability Services as soon
+as possible.
+
+\hypertarget{masks}{%
+\subsubsection{Masks}\label{masks}}
+
+WEARING MASKS IN CLASSROOMS IS REQUIRED Face coverings that cover the
+mouth and nose are required in all indoor spaces and all enclosed or
+partially enclosed outdoor spaces. MSU requires all students to wear
+face masks or cloth face coverings in classrooms, laboratories and other
+similar spaces where in-person instruction occurs. MSU requires the
+wearing of masks in physical classrooms to help mitigate the
+transmission of SARS-CoV-2, which causes COVID-19. The MSU community
+views the adoption of these practices as a mark of good citizenship and
+respectful care of fellow classmates, faculty, and staff.
+
+The complete details about MSU's mask requirement can be found at
+\url{https://www.montana.edu/health/coronavirus/index.html}.
+
+These requirements from the Office of the Commissioner of Higher
+Education are detailed in the MUS Healthy Fall 2020 Guidelines, Appendix
+B.
+
+For more information:
+\url{https://www.montana.edu/health/coronavirus/prevention/index.html}
+
+Compliance with the face-covering protocol is expected. If a you do not
+comply with a classroom rule, you may be requested to leave class.
+Section 460.00 of the MSU Code of Student Conduct covers ``disruptive
+student behavior.''
+
+\hypertarget{health-related-class-absences}{%
+\subsubsection{Health-Related Class
+Absences}\label{health-related-class-absences}}
+
+Please evaluate your own health status regularly and refrain from
+attending class and other on-campus events if you are ill.~MSU students
+who miss class due to illness will be given opportunities to access
+course materials online. You are encouraged to seek appropriate medical
+attention for treatment of illness. In the event of contagious illness,
+please do not come to class or to campus to turn in work. Instead notify
+me by email about your absence as soon as practical, so that
+accommodations can be made. Please note that documentation (a Doctor's
+note) for medical excuses is not required. MSU University Health
+Partners - as part their commitment to maintain patient confidentiality,
+to encourage more appropriate use of healthcare resources, and to
+support meaningful dialogue between instructors and students - does not
+provide such documentation.
+
+\hypertarget{course-communication}{%
+\subsubsection{Course Communication}\label{course-communication}}
+
+In the event that one or more students and/or the instructor are
+required to quarantine or if the university moves courses online, the
+course may need to continue in a virtual format. Communication about how
+the course will proceed will be available through D2l.
+
+\hypertarget{virtual-attendance}{%
+\subsubsection{Virtual Attendance}\label{virtual-attendance}}
+
+Due to the ongoing pandemic and issues stemming from this, a synchronous
+virtual attendance option will be permitted for this course. The
+Microsoft Teams platform will be used for this virtual option. When
+attending virtually, if at all possible, please plan to have your video
+camera turned on.
+
+\hypertarget{approximate-course-outline}{%
+\section{Approximate Course Outline}\label{approximate-course-outline}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Course Intro \& Preliminaries:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  R
+\item
+  Git
+\item
+  Plotting spatial data
+\item
+  Linear Models
+\item
+  Stan / Bayesian Inference
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Gaussian Processes in 1D
+\item
+  Point Referenced Data
+\item
+  Areal Data
+\item
+  Point Process Data (and potentially animal movement models)
+\end{enumerate}
+
+
+
+
+\end{document}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
